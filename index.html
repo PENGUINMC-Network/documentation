@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A clear reference for setting up and running Penguin Bot and the TPA PhantomMC Minecraft plugin.">
+  <meta name="theme-color" content="#eff3f9">
+  <title>Penguin Docs — Penguin Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <div class="docs-window">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Penguin Docs home">
+      <img class="brand-logo" src="./main-photo.jpg" alt="Penguin Network mark">
+      <span class="brand-text">
+        <strong>Docs</strong>
+        <small>Penguin Network</small>
+      </span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="top-nav" aria-label="Documentation tools">
+      <button class="toolbar-button" id="searchTrigger" type="button" aria-label="Focus documentation search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"></circle><path d="m15.3 15.3 4.2 4.2"></path></svg>
+        <span>Search docs</span><kbd>/</kbd>
+      </button>
+      <button class="icon-button" id="printButton" type="button" aria-label="Print this guide" title="Print this guide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"></path><path d="M7 14h10v6H7zM17 11h.01"></path></svg>
+      </button>
+      <a class="repo-link" href="https://github.com/PhantomMC-Network/TPA-PhantomMC" target="_blank" rel="noreferrer">
+        <span>GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9"></path><path d="M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+      </a>
+    </nav>
+  </header>
+
+  <div class="layout" id="top">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-label">Documentation</div>
+        <div class="search-wrap">
+          <label class="sr-only" for="docSearch">Search documentation</label>
+          <input id="docSearch" type="search" placeholder="Search documentation..." autocomplete="off" aria-describedby="searchStatus">
+          <p class="search-status" id="searchStatus" aria-live="polite"></p>
+        </div>
+        <nav class="side-nav" id="sideNav" aria-label="Documentation sections">
+          <a href="#overview" class="side-link active">Overview</a>
+          <div class="nav-group-label">Penguin Bot</div>
+          <a href="#bot-features" class="side-link">Features</a>
+          <a href="#bot-tech" class="side-link">Tech Stack</a>
+          <a href="#bot-setup" class="side-link">Setup</a>
+          <a href="#bot-config" class="side-link">Configuration</a>
+          <a href="#bot-commands" class="side-link">Commands</a>
+          <a href="#bot-systems" class="side-link">Systems</a>
+          <div class="nav-group-label">TPA Plugin</div>
+          <a href="#plugin-overview" class="side-link">Overview</a>
+          <a href="#plugin-commands" class="side-link">Commands &amp; Permissions</a>
+          <a href="#plugin-config" class="side-link">Configuration</a>
+          <a href="#plugin-behavior" class="side-link">Behavior</a>
+          <div class="nav-group-label">General</div>
+          <a href="#architecture" class="side-link">Architecture</a>
+          <a href="#deployment" class="side-link">Deployment</a>
+          <a href="#troubleshooting" class="side-link">Troubleshooting</a>
+        </nav>
+        <div class="sidebar-note">
+          <strong>Included projects</strong>
+          <p>Penguin Bot (Discord.js/TypeScript) and TPA-PhantomMC plugin (Java/Spigot/Paper).</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="hero doc-section" data-section="overview" id="overview">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Penguin Network · Documentation</p>
+        <h1>Introduction</h1>
+        <p class="hero-lead">The official reference for <strong>Penguin Bot</strong> and the <strong>TPA PhantomMC</strong> Minecraft plugin. Find practical setup steps, command references, configuration details, and operational guidance in one place.</p>
+        <h2 class="quick-heading">Quick description</h2>
+        <p class="intro-copy">Use the sidebar to browse by project or search for a specific topic. Start with the setup guides to install each project, then refer to commands and configuration when you need a detail.</p>
+        <div class="code-block intro-code">
+          <div class="code-head"><span>Documentation map</span><span>overview.yml</span></div>
+          <pre><code>projects:
+  penguin-bot: "Discord.js · TypeScript"
+  tpa-phantommc: "Spigot/Paper · Java 21"
+reference:
+  - setup
+  - commands
+  - configuration
+  - operations</code></pre>
+        </div>
+        <div class="hero-actions">
+          <a href="#bot-setup" class="btn">Start with Penguin Bot</a>
+          <a href="#plugin-overview" class="btn btn-ghost">Explore the TPA plugin</a>
+        </div>
+      </section>
+
+      <section class="doc-section section-banner" id="penguin-bot" data-section="penguin-bot">
+        <div class="section-heading">
+          <p class="eyebrow">Section 1</p>
+          <h2>Penguin Bot</h2>
+          <p>Discord bot for Penguin Network — giveaways, tickets, verification, welcome cards, temp voice, suggestions, and utilities.</p>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="bot-features" id="bot-features">
+        <div class="section-heading">
+          <p class="eyebrow">Penguin Bot</p>
+          <h2>Features</h2>
+          <p>The bot is organized around modular systems, each with commands, handlers, and persistent state where needed.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="card feature-card">
+            <div class="card-icon">🎁</div>
+            <h3>Giveaways</h3>
+            <p>Create, edit, pause, resume, reroll, and cancel giveaways. Supports role requirements, account/server age checks, custom emoji, and persistent recovery after restart.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="card-icon">🎫</div>
+            <h3>Ticket System</h3>
+            <p>Category-based ticket creation, staff dashboard, claim/unclaim, priority, notes, tags, user add/remove, auto-close, and online HTML transcripts.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="card-icon">🔐</div>
+            <h3>CAPTCHA Verification</h3>
+            <p>Persistent verification panel with a generated CAPTCHA image and modal answer flow. Successful users receive the configured verified role.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="card-icon">👋</div>
+            <h3>Welcome Cards</h3>
+            <p>Canvas-generated welcome images with configurable background, accent colors, text, buttons, embeds, and test/preview commands.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="card-icon">🔊</div>
+            <h3>Temporary Voice</h3>
+            <p>Join-to-create voice hub that spawns private rooms with a dashboard for rename, limit, lock/hide, permit, kick, transfer ownership, and cleanup.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="card-icon">💡</div>
+            <h3>Suggestions &amp; Utilities</h3>
+            <p>Suggestion submission with approve/reject/implement flow, Minecraft server status detection, and staff/admin utility commands.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="bot-tech" id="bot-tech">
+        <div class="section-heading">
+          <p class="eyebrow">Penguin Bot</p>
+          <h2>Tech Stack</h2>
+          <p>The bot is built with Node.js and TypeScript, using Discord.js v14 and file-based storage for simple deployment.</p>
+        </div>
+        <div class="table-wrap card">
+          <table>
+            <thead>
+              <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Runtime</td><td>Node.js &gt;= 18.17</td><td>Bot runtime and scripts</td></tr>
+              <tr><td>Language</td><td>TypeScript</td><td>Typed source compiled to <code>dist/</code></td></tr>
+              <tr><td>Discord API</td><td>discord.js v14</td><td>Slash commands, interactions, events, channels, roles</td></tr>
+              <tr><td>Image generation</td><td>@napi-rs/canvas</td><td>Welcome cards and CAPTCHA images</td></tr>
+              <tr><td>Storage</td><td>YAML / JSON files</td><td>Giveaways, tickets, transcripts, temp voice state</td></tr>
+              <tr><td>Config</td><td>dotenv, YAML, JSON</td><td>Environment secrets and feature configuration</td></tr>
+              <tr><td>Minecraft status</td><td>@minescope/mineping</td><td>Java/Bedrock server ping detection</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="bot-setup" id="bot-setup">
+        <div class="section-heading">
+          <p class="eyebrow">Penguin Bot</p>
+          <h2>Setup</h2>
+          <p>Install dependencies, configure environment variables, deploy commands, and start the bot.</p>
+        </div>
+        <div class="steps">
+          <article class="card step-card">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Install dependencies</h3>
+              <p>Install Node dependencies in the bot project.</p>
+              <div class="code-block">
+                <div class="code-head"><span>bash</span><button class="copy-btn" data-copy="npm install">Copy</button></div>
+                <pre><code>npm install</code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="card step-card">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Create <code>.env</code></h3>
+              <p>Add your Discord credentials and transcript server settings.</p>
+              <div class="code-block">
+                <div class="code-head"><span>.env</span><button class="copy-btn" data-copy="DISCORD_TOKEN=your_bot_token_here&#10;CLIENT_ID=your_client_id_here&#10;GUILD_ID=your_guild_id_optional_for_dev&#10;&#10;TRANSCRIPT_PORT=25634&#10;TRANSCRIPT_PUBLIC_URL=http://localhost:25634">Copy</button></div>
+<pre><code>DISCORD_TOKEN=your_bot_token_here
+CLIENT_ID=your_client_id_here
+GUILD_ID=your_guild_id_optional_for_dev
+
+TRANSCRIPT_PORT=25634
+TRANSCRIPT_PUBLIC_URL=http://localhost:25634</code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="card step-card">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Build and deploy commands</h3>
+              <p>Compile TypeScript and register slash commands.</p>
+              <div class="code-block">
+                <div class="code-head"><span>bash</span><button class="copy-btn" data-copy="npm run build&#10;npm run deploy">Copy</button></div>
+<pre><code>npm run build
+npm run deploy</code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="card step-card">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Start the bot</h3>
+              <p>Run the compiled bot from <code>dist/</code>.</p>
+              <div class="code-block">
+                <div class="code-head"><span>bash</span><button class="copy-btn" data-copy="npm start">Copy</button></div>
+                <pre><code>npm start</code></pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>      <section class="doc-section" data-section="bot-config" id="bot-config">
+        <div class="section-heading">
+          <p class="eyebrow">Penguin Bot</p>
+          <h2>Configuration</h2>
+          <p>Penguin Bot uses <code>.env</code> for secrets, <code>config.json</code> for general settings, and YAML files in <code>dist/config</code> or <code>config</code> for feature modules.</p>
+        </div>
+        <div class="config-grid">
+          <article class="card system-card">
+            <h3>Environment Variables</h3>
+            <div class="table-wrap" style="border:none;background:transparent;box-shadow:none">
+              <table>
+                <thead><tr><th>Variable</th><th>Required</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><code>DISCORD_TOKEN</code></td><td>Yes</td><td>Bot token. <code>DISCORD_BOT_TOKEN</code> also supported.</td></tr>
+                  <tr><td><code>CLIENT_ID</code></td><td>Deploy</td><td>Application/client ID. Deploy script can resolve it from token.</td></tr>
+                  <tr><td><code>GUILD_ID</code></td><td>No</td><td>Optional guild for instant command deployment during development.</td></tr>
+                  <tr><td><code>TRANSCRIPT_PORT</code></td><td>No</td><td>Port for transcript web server. Default <code>25568</code>.</td></tr>
+                  <tr><td><code>TRANSCRIPT_PUBLIC_URL</code></td><td>No</td><td>Public base URL used in transcript links.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="card system-card">
+            <h3>Configuration Files</h3>
+            <ul class="file-list">
+              <li><strong>config.json</strong> — Bot name, colors, giveaway defaults, staff fallback, storage path, Minecraft default server.</li>
+              <li><strong>dist/config/ticket.yml</strong> — Ticket categories, channels, roles, auto-close, panel text, storage paths.</li>
+              <li><strong>dist/config/welcome.yml</strong> — Welcome channel, message/embed, card design, buttons.</li>
+              <li><strong>dist/config/verify.yml</strong> — Verification channel, verified role, CAPTCHA panel and timeout settings.</li>
+              <li><strong>dist/data/*.yml/json</strong> — Runtime data: giveaways, closed tickets, transcripts, temp voice state.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="callout warn">
+          <strong>Security note:</strong> Never commit <code>.env</code> or bot tokens. The real bot workspace contains a <code>.env</code>; keep secrets local and use placeholders in docs and examples.
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="bot-commands" id="bot-commands">
+        <div class="section-heading">
+          <p class="eyebrow">Penguin Bot</p>
+          <h2>Commands</h2>
+          <p>Slash commands registered by the bot. Permissions shown are the typical intended access; actual behavior may also depend on configured staff roles.</p>
+        </div>
+        <div class="card table-wrap">
+          <table class="command-table">
+            <thead><tr><th>Command</th><th>Access</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>/giveaway start</td><td><span class="badge staff">Staff</span></td><td>Start a giveaway with prize, duration, winners, channel, image, emoji, and entry requirements.</td></tr>
+              <tr><td>/giveaway end|reroll|cancel</td><td><span class="badge staff">Staff</span></td><td>End, reroll, or cancel a giveaway by ID.</td></tr>
+              <tr><td>/giveaway pause|resume|edit|info|list</td><td><span class="badge staff">Staff</span></td><td>Manage active giveaways, update details, and inspect state.</td></tr>
+              <tr><td>/ticket create</td><td><span class="badge">User</span></td><td>Create a ticket through category modal flow.</td></tr>
+              <tr><td>/ticket close</td><td><span class="badge">User/Staff</span></td><td>Request ticket closure with confirmation in the current ticket channel.</td></tr>
+              <tr><td>/ticket panel</td><td><span class="badge admin">Admin</span></td><td>Post the ticket category panel.</td></tr>
+              <tr><td>/ticket-panel</td><td><span class="badge admin">Admin</span></td><td>Post the support ticket panel in the current channel.</td></tr>
+              <tr><td>/ticket-admin</td><td><span class="badge admin">Admin</span></td><td>Open admin ticket controls: panel, stats, reload.</td></tr>
+              <tr><td>/ticket-stats</td><td><span class="badge staff">Staff</span></td><td>View ticket statistics and performance metrics.</td></tr>
+              <tr><td>/ticket-reload</td><td><span class="badge admin">Admin</span></td><td>Reload <code>ticket.yml</code> without restarting.</td></tr>
+              <tr><td>/staff-panel</td><td><span class="badge staff">Staff</span></td><td>Open the staff ticket dashboard.</td></tr>
+              <tr><td>/verify setup</td><td><span class="badge admin">Admin</span></td><td>Configure verification channel and verified role.</td></tr>
+              <tr><td>/verify panel|reload|settings</td><td><span class="badge admin">Admin</span></td><td>Post verification panel, reload config, or inspect settings.</td></tr>
+              <tr><td>/welcome setup</td><td><span class="badge admin">Manage Guild</span></td><td>Set the welcome channel and enable welcome system.</td></tr>
+              <tr><td>/welcome test|preview|reload|settings</td><td><span class="badge admin">Manage Guild</span></td><td>Test, preview, reload, or inspect welcome configuration.</td></tr>
+              <tr><td>/tempvoice setup</td><td><span class="badge admin">Manage Guild</span></td><td>Create or assign a join-to-create hub for temporary voice rooms.</td></tr>
+              <tr><td>/tempvoice disable</td><td><span class="badge admin">Manage Guild</span></td><td>Disable temporary voice system for the guild.</td></tr>
+              <tr><td>/suggest submit</td><td><span class="badge">User</span></td><td>Submit a suggestion, optionally with image attachment.</td></tr>
+              <tr><td>/suggest setup</td><td><span class="badge admin">Admin</span></td><td>Set the official suggestions channel.</td></tr>
+              <tr><td>/suggest approve|reject|implement</td><td><span class="badge staff">Staff</span></td><td>Moderate suggestion status with optional reason/note.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="doc-section" data-section="bot-systems" id="bot-systems">
+        <div class="section-heading">
+          <p class="eyebrow">Penguin Bot</p>
+          <h2>Systems</h2>
+          <p>How the major modules behave at runtime.</p>
+        </div>
+        <div class="system-grid">
+          <article class="card system-card">
+            <h3>🎁 Giveaway System</h3>
+            <p>Managed by <code>GiveawayManager</code> with local YAML persistence.</p>
+            <ul>
+              <li>Stores giveaways in <code>dist/data/giveaways.yml</code> (configurable).</li>
+              <li>Supports requirements: required/blacklisted roles, min account age, min server age.</li>
+              <li>Recovers active giveaways on startup and ends missed giveaways.</li>
+              <li>Button-based entry toggling with ephemeral feedback.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>🎫 Ticket System</h3>
+            <p>Implemented by <code>TicketSystem</code>, <code>TicketStorage</code>, and <code>TranscriptServer</code>.</p>
+            <ul>
+              <li>Category modal creates a private ticket channel with permission overwrites.</li>
+              <li>Staff controls: claim, notify, rename, priority, notes, tags, add/remove users.</li>
+              <li>Closed tickets move to closed category/name and generate HTML transcripts.</li>
+              <li>Transcript server exposes <code>/transcripts/:id</code> and <code>/manage/:userId/transcripts</code>.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>🔐 Verification System</h3>
+            <p><code>VerifySystem</code> provides CAPTCHA-based role gating.</p>
+            <ul>
+              <li>Posts a persistent Verify button in the configured channel.</li>
+              <li>Generates a canvas CAPTCHA image and stores pending code per user.</li>
+              <li>Modal submission validates answer and grants configured role.</li>
+              <li>Pending CAPTCHA expires automatically after timeout.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>👋 Welcome System</h3>
+            <p>Uses <code>guildMemberAdd</code>, <code>welcomeConfigLoader</code>, and Canvas image generation.</p>
+            <ul>
+              <li>Sends welcome message/card on member join when enabled.</li>
+              <li>Supports embed title/description placeholders, buttons, and join/member fields.</li>
+              <li><code>/welcome test</code> and <code>/welcome preview</code> help admins validate design.</li>
+              <li>Config reloads from disk without code changes.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>🔊 Temp Voice System</h3>
+            <p><code>TempVoiceSystem</code> manages join-to-create voice channels.</p>
+            <ul>
+              <li>Joining hub creates a private room and moves the member.</li>
+              <li>Dashboard controls: rename, limit, lock, hide, delete, kick, permit, transfer.</li>
+              <li>Owner leaving or empty room triggers cleanup.</li>
+              <li>State persists in <code>dist/data/temp-voice.json</code> and recovers on restart.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>🧰 Utilities</h3>
+            <p>Support features used across systems.</p>
+            <ul>
+              <li><strong>Minecraft status:</strong> detects IP/domain or <code>ip</code> trigger and replies with Java/Bedrock ping embed.</li>
+              <li><strong>Suggestions:</strong> posts to configured suggestion channel with vote reactions and staff status updates.</li>
+              <li><strong>Permissions:</strong> centralized staff/admin checks for giveaway and ticket actions.</li>
+              <li><strong>Safety:</strong> unhandled rejection/exception logging and graceful shutdown handlers.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+﻿      <section class="doc-section section-banner" id="tpa-plugin" data-section="tpa-plugin">
+        <div class="section-heading">
+          <p class="eyebrow">Section 2</p>
+          <h2>TPA PhantomMC Plugin</h2>
+          <p>Minecraft Spigot/Paper plugin for teleport requests between players. Source: <code>TPA-Plugin-main</code>.</p>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="plugin-overview" id="plugin-overview">
+        <div class="section-heading">
+          <p class="eyebrow">TPA Plugin</p>
+          <h2>Overview</h2>
+          <p>Core plugin information and build stack.</p>
+        </div>
+        <div class="config-grid">
+          <article class="card system-card">
+            <h3>Plugin Details</h3>
+            <ul class="file-list">
+              <li><strong>Name:</strong> TPAPlugin</li>
+              <li><strong>Package:</strong> <code>org.abbas.tPAPlugin</code></li>
+              <li><strong>Platform:</strong> Spigot/Paper, <code>api-version: 1.21</code></li>
+              <li><strong>Java:</strong> 21</li>
+              <li><strong>Build:</strong> Maven + Shade + ProGuard</li>
+              <li><strong>Database:</strong> SQLite (<code>database.db</code>)</li>
+            </ul>
+            <div class="callout" style="margin-top:16px">
+              <strong>GitHub:</strong> <a href="https://github.com/PhantomMC-Network/TPA-PhantomMC" target="_blank" rel="noreferrer">PhantomMC-Network/TPA-PhantomMC</a>
+            </div>
+          </article>
+          <article class="card system-card">
+            <h3>Main Components</h3>
+            <ul>
+              <li><strong>Managers:</strong> <code>TPARequestManager</code>, <code>TeleportManager</code>, <code>CooldownManager</code>, <code>PlayerToggleManager</code>.</li>
+              <li><strong>Services:</strong> <code>TPARequestService</code>, <code>DatabaseService</code>, <code>SqliteService</code>.</li>
+              <li><strong>Listeners:</strong> move/damage/quit listeners cancel or clean up teleports/requests.</li>
+              <li><strong>Config:</strong> <code>ConfigManager</code> and <code>MessageManager</code> for settings and messages.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="plugin-commands" id="plugin-commands">
+        <div class="section-heading">
+          <p class="eyebrow">TPA Plugin</p>
+          <h2>Commands &amp; Permissions</h2>
+          <p>All commands default to <code>true</code> in <code>plugin.yml</code>.</p>
+        </div>
+        <div class="card table-wrap">
+          <table class="command-table">
+            <thead><tr><th>Command</th><th>Permission</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>/tpa &lt;player&gt;</code></td><td><code>tpa.use</code></td><td>Send a teleport request to a player.</td></tr>
+              <tr><td><code>/tpahere &lt;player&gt;</code></td><td><code>tpahere.use</code></td><td>Ask a player to teleport to you.</td></tr>
+              <tr><td><code>/tpaccept</code></td><td><code>tpa.accept</code></td><td>Accept a pending TPA request.</td></tr>
+              <tr><td><code>/tpdeny</code></td><td><code>tpa.deny</code></td><td>Deny a pending TPA request.</td></tr>
+              <tr><td><code>/tpacancel</code></td><td><code>tpa.cancel</code></td><td>Cancel your outgoing TPA request.</td></tr>
+              <tr><td><code>/tpatoggle</code></td><td><code>tpa.toggle</code></td><td>Toggle incoming TPA requests on/off.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="plugin-config" id="plugin-config">
+        <div class="section-heading">
+          <p class="eyebrow">TPA Plugin</p>
+          <h2>Configuration</h2>
+          <p>Default settings from <code>src/main/resources/config.yml</code>.</p>
+        </div>
+        <div class="config-grid">
+          <article class="card system-card">
+            <h3>config.yml</h3>
+            <div class="code-block">
+              <div class="code-head"><span>yaml</span><button class="copy-btn" data-copy="database:\n  file: database.db\n\nsettings:\n  request-expire-seconds: 60\n  teleport-warmup-seconds: 5\n  cooldown-seconds: 30\n  cancel-on-move: true\n  cancel-on-damage: true">Copy</button></div>
+<pre><code>database:
+  file: database.db
+
+settings:
+  request-expire-seconds: 60
+  teleport-warmup-seconds: 5
+  cooldown-seconds: 30
+  cancel-on-move: true
+  cancel-on-damage: true</code></pre>
+            </div>
+          </article>
+          <article class="card system-card">
+            <h3>Messages</h3>
+            <p>Messages are configurable with placeholders like <code>%player%</code> and <code>%seconds%</code>. Includes request sent/received/accepted/denied/expired/cancelled, teleport warmup/success/cancel, toggle, cooldown, and permission errors.</p>
+            <div class="callout" style="margin-top:12px">
+              <strong>Action bar:</strong> <code>teleport-actionbar</code> and <code>teleport-actionbar-success</code> show teleport countdown/status.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="plugin-behavior" id="plugin-behavior">
+        <div class="section-heading">
+          <p class="eyebrow">TPA Plugin</p>
+          <h2>Runtime Behavior</h2>
+          <p>How requests and teleports are handled.</p>
+        </div>
+        <div class="system-grid">
+          <article class="card system-card">
+            <h3>Request Lifecycle</h3>
+            <ul>
+              <li>Requests are stored with sender, target, type, creation, and expiry time.</li>
+              <li>Expired requests are removed by scheduler and both players are notified.</li>
+              <li>Outgoing requests can be cancelled; quit handling cleans related requests/teleports.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>Teleport Safety</h3>
+            <ul>
+              <li>Accepted requests start a warmup countdown (action bar).</li>
+              <li>Movement or damage can cancel warmup depending on config.</li>
+              <li>Teleport tasks and action bars are cleaned up on shutdown.</li>
+              <li>SQLite database is initialized on enable and closed on disable.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="architecture" id="architecture">
+        <div class="section-heading">
+          <p class="eyebrow">Codebase</p>
+          <h2>Architecture</h2>
+          <p>High-level project layout from the <code>bot-with-verification</code> source.</p>
+        </div>
+        <div class="card arch-tree">
+<pre><code>bot-with-verification/
+├── index.ts                     # Bot bootstrap, client, managers, command/event loading
+├── config.json                  # General bot/giveaway/minecraft settings
+├── dist/config/                 # Runtime YAML configs (ticket/welcome/verify)
+├── dist/data/                   # Runtime data (giveaways, tickets, transcripts, temp voice)
+├── src/
+│   ├── commands/                # Slash command modules
+│   ├── events/                  # ready, interactionCreate, guildMemberAdd, messageCreate...
+│   ├── handlers/                # Button/modal legacy handlers
+│   ├── structures/              # GiveawayManager, TicketSystem, VerifySystem, Storage...
+│   ├── temp-voice-channel/      # Temp voice system, dashboard, store
+│   └── utils/                   # embeds, permissions, time, config loaders, canvas utils
+└── assets/                      # Fonts and images used by Canvas cards/CAPTCHA</code></pre>
+        </div>
+        <div class="callout">
+          <strong>Runtime flow:</strong> <code>index.ts</code> creates the Discord client, loads commands/events, initializes managers, and logs in. <code>ready</code> restores state, starts transcript server, sets timers, and recovers temp voice. <code>interactionCreate</code> routes slash commands, autocomplete, buttons, selects, and modals to the appropriate system.
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="deployment" id="deployment">
+        <div class="section-heading">
+          <p class="eyebrow">Operations</p>
+          <h2>Deployment</h2>
+          <p>Recommended practices for running Penguin Bot in production.</p>
+        </div>
+        <div class="system-grid">
+          <article class="card system-card">
+            <h3>Production Checklist</h3>
+            <ul>
+              <li>Set production <code>DISCORD_TOKEN</code> and remove <code>GUILD_ID</code> for global commands if desired.</li>
+              <li>Configure transcript public URL/port and open firewall/reverse proxy as needed.</li>
+              <li>Ensure bot has required Discord permissions: Manage Channels/Roles, Send Messages, Embed Links, Attach Files, Move Members, etc.</li>
+              <li>Place bot role above verified/ticket-managed roles where role assignment is needed.</li>
+              <li>Persist <code>dist/data</code> and config files across restarts/deployments.</li>
+            </ul>
+          </article>
+          <article class="card system-card">
+            <h3>Build &amp; Run</h3>
+            <div class="code-block">
+              <div class="code-head"><span>bash</span><button class="copy-btn" data-copy="npm ci&#10;npm run build&#10;npm run deploy&#10;npm start">Copy</button></div>
+<pre><code>npm ci
+npm run build
+npm run deploy
+npm start</code></pre>
+            </div>
+            <p style="margin-top:12px;">Use a process manager like PM2, systemd, or Docker for auto-restart and logs. Keep <code>dist/data</code> writable.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" data-section="troubleshooting" id="troubleshooting">
+        <div class="section-heading">
+          <p class="eyebrow">Help</p>
+          <h2>Troubleshooting</h2>
+          <p>Common issues and where to look first.</p>
+        </div>
+        <div class="trouble-grid">
+          <article class="card trouble-card">
+            <h3>Commands not appearing</h3>
+            <p>Run <code>npm run deploy</code>. For instant guild updates set <code>GUILD_ID</code>. Global commands can take time to propagate. Confirm the bot logged in and deployment logged success.</p>
+          </article>
+          <article class="card trouble-card">
+            <h3>Verification role not assigned</h3>
+            <p>Check <code>/verify settings</code>, ensure role ID is valid, and move the bot role above the verified role. The bot needs Manage Roles permission.</p>
+          </article>
+          <article class="card trouble-card">
+            <h3>Ticket transcript links broken</h3>
+            <p>Verify <code>TRANSCRIPT_PUBLIC_URL</code> and <code>TRANSCRIPT_PORT</code>. Ensure TranscriptServer started and the port is reachable. Check SSL/file permissions if using HTTPS cert paths.</p>
+          </article>
+          <article class="card trouble-card">
+            <h3>Welcome/CAPTCHA image fails</h3>
+            <p>Confirm <code>@napi-rs/canvas</code> installed correctly and font/assets files exist. Check logs for font registration or image generation errors.</p>
+          </article>
+          <article class="card trouble-card">
+            <h3>Temp voice room not created</h3>
+            <p>Bot needs Manage Channels, Manage Roles, Move Members, Connect, and View Channel. Re-run <code>/tempvoice setup</code> and ensure hub is a voice channel.</p>
+          </article>
+          <article class="card trouble-card">
+            <h3>Data not persisting</h3>
+            <p>Check write permissions for <code>dist/data</code> and configured storage paths. Avoid deleting runtime files during deploy; back them up before updates.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>Penguin Docs for <strong>Penguin Network</strong>. Built with HTML, CSS, and TypeScript.</div>
+        <div><a href="https://github.com/PhantomMC-Network/TPA-PhantomMC" target="_blank" rel="noreferrer">TPA Plugin on GitHub</a></div>
+      </footer>
+    </main>
+  </div>
+
+  </div>
+
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
