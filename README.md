@@ -1,3 +1,7 @@
+![Auto Assign](https://github.com/PENGUINMC-Network/documentation/actions/workflows/auto-assign.yml/badge.svg)
+
+![Proof HTML](https://github.com/PENGUINMC-Network/documentation/actions/workflows/proof-html.yml/badge.svg)
+
 # Penguin Bot Documentation
 
 Static documentation site for **Penguin Bot**, the all-in-one Discord bot used by Penguin Network.
