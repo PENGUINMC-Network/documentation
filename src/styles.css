@@ -436,6 +436,15 @@ pre {
   line-height: 1.55;
 }
 
+.sidebar-note-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--primary-dark);
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .content {
   min-width: 0;
   height: 100%;

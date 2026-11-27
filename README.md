@@ -2,11 +2,11 @@
 
 Static documentation site for **Penguin Bot**, the all-in-one Discord bot used by Penguin Network.
 
-This documentation covers Penguin Bot and the TPA-PhantomMC plugin, including setup, configuration, commands, systems, architecture, deployment, and troubleshooting.
+This documentation covers Penguin Bot and the TPA-Plugin project, including setup, configuration, commands, systems, architecture, deployment, and troubleshooting.
 
 ## Related
 
-- **TPA-PhantomMC (GitHub):** https://github.com/PhantomMC-Network/TPA-PhantomMC
+- **TPA-Plugin (GitHub):** https://github.com/PENGUINMC-Network/TPA-Plugin
 
 ## Tech
 
